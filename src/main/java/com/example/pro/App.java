@@ -8,6 +8,16 @@ import java.util.Objects;
 
 public class App extends Application {
     public static Image BLACK_KING = load("black_king.png");
+    public static Image BLACK_PAWN = load("black_pawn.png");
+    public static Image WHITE_PAWN = load("white_pawn.png");
+    public static Image WHITE_KING = load("white_king.png");
+    public static Image WHITE_QUEEN = load("white_queen.png");
+    public static Image BLACK_QUEEN = load("black_queen.png");
+    public static Image BLACK_BISHOP = load("black_bishop.png");
+    public static Image WHITE_BISHOP = load("white_bishop.png");
+    public static Image BLACK_HORSE = load("black_knight.png");
+    public static Image WHITE_HORSE = load("white_knight.png");
+
     @Override
     public void start(Stage primaryStage) {
         GameManager manager = new GameManager(primaryStage);

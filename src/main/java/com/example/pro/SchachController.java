@@ -46,6 +46,10 @@ public class SchachController extends BasicController {
         board[1][0] = new Horse(1,0, false);
         board[6][7] = new Horse(6,7, true);
         board[6][0] = new Horse(6,0, false);
+        board[7][7] = new Rook(7,7, true);
+        board[7][0] = new Rook(7,0, false);
+        board[0][7] = new Rook(0,7, true);
+        board[0][0] = new Rook(0,0, false);
         draw();
     }
     @FXML

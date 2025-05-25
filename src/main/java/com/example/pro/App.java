@@ -17,6 +17,8 @@ public class App extends Application {
     public static Image WHITE_BISHOP = load("white_bishop.png");
     public static Image BLACK_HORSE = load("black_knight.png");
     public static Image WHITE_HORSE = load("white_knight.png");
+    public static Image BLACK_ROOK = load("black_rook.png");
+    public static Image WHITE_ROOK = load("white_rook.png");
 
     @Override
     public void start(Stage primaryStage) {

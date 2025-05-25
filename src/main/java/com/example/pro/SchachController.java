@@ -33,15 +33,12 @@ public class SchachController extends BasicController {
         }
         board[4][7] = new King(4,7, true);
         board[4][0] = new King(4,0, false);
-
         board[3][7] = new Queen(3,7, true);
         board[3][0] = new Queen(3,0, false);
-
         board[2][7] = new Bishop(2,7, true);
         board[2][0] = new Bishop(2,0, false);
         board[5][7] = new Bishop(5,7, true);
         board[5][0] = new Bishop(5,0, false);
-
         board[1][7] = new Horse(1,7, true);
         board[1][0] = new Horse(1,0, false);
         board[6][7] = new Horse(6,7, true);

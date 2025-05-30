@@ -1,6 +1,8 @@
 package com.example.pro;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -21,12 +23,16 @@ public class App extends Application {
     public static Image WHITE_ROOK = load("white_rook.png");
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         GameManager manager = new GameManager(primaryStage);
+        manager.loadMenue();
+        primaryStage.setTitle("JSS-Spielesammlung");
+        primaryStage.setResizable(true);
+        primaryStage.show();
         manager.addGame(new Schach("Schach",null,"Schach.fxml"));
         manager.launch(0);
-        primaryStage.setTitle("Meine erste JavaFX-App");
-        primaryStage.setResizable(false);
+        primaryStage.setTitle("JSS Spielesammlung");
+        primaryStage.setResizable(true);
         primaryStage.show();
     }
     private static Image load(String resourcePath) {

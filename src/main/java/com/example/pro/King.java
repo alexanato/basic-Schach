@@ -14,6 +14,26 @@ public class King extends Piece{
 
     @Override
     public boolean isValid(int x,int y, boolean black) {
-        return (x == getX()+1&&y==getY()+1)||(x == getX()+1&&y==getY()-1)||(x == getX()-1&&y==getY()+1)||(x == getX()-1&&y==getY()-1)||(x == getX()&&y==getY()+1)||(x == getX()&&y==getY()-1)||(x == getX()+1&&y==getY())||(x == getX()-1&&y==getY());
+        boolean move = false;
+        if(SchachController.board[x][y]!= null){
+            Piece Töten = SchachController.board[x][y];
+            if(!Töten.getBlack()&&black) {
+                move = (x == getX() + 1 && y == getY() + 1) || (x == getX() + 1 && y == getY() - 1) || (x == getX() - 1 && y == getY() + 1) || (x == getX() - 1 && y == getY() - 1) || (x == getX() && y == getY() + 1) || (x == getX() && y == getY() - 1) || (x == getX() + 1 && y == getY()) || (x == getX() - 1 && y == getY());
+            }
+            else if(Töten.getBlack()&&!black){
+                move = (x == getX() + 1 && y == getY() + 1) || (x == getX() + 1 && y == getY() - 1) || (x == getX() - 1 && y == getY() + 1) || (x == getX() - 1 && y == getY() - 1) || (x == getX() && y == getY() + 1) || (x == getX() && y == getY() - 1) || (x == getX() + 1 && y == getY()) || (x == getX() - 1 && y == getY());
+            }
+            else if(Töten.getBlack()&& black){
+                return move;
+            }
+            else if (!Töten.getBlack() && !black){
+                return move;
+            }
+        }
+        else
+        {
+            move = (x == getX() + 1 && y == getY() + 1) || (x == getX() + 1 && y == getY() - 1) || (x == getX() - 1 && y == getY() + 1) || (x == getX() - 1 && y == getY() - 1) || (x == getX() && y == getY() + 1) || (x == getX() && y == getY() - 1) || (x == getX() + 1 && y == getY()) || (x == getX() - 1 && y == getY());
+        }
+            return move;
     }
 }

@@ -1,6 +1,5 @@
 package com.example.pro;
 
-import com.example.pro.BasicController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +9,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 public class GameManager {
@@ -36,13 +34,22 @@ public class GameManager {
     public Image getGameLogo(int index){
         return games.get(index).logo;
     }
+
+    public void loadMenue() {
+        try {
+            switchTo("Menu.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void launch(int gameIndex){
         Game game = getGame(gameIndex);
         game.start(this,switchTo(game.viewPath));
         currentGameIndex = gameIndex;
     }
     public void returnToMenu(){
-        switchTo("MainMenu.fxml");
+        switchTo("com/example/pro/Menu.fxml");
     }
     public void sendResult(String message){
         switchTo("Result.fxml",message );

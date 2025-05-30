@@ -10,4 +10,10 @@ public class Bishop extends Piece{
             setSprite(App.WHITE_BISHOP);
         }
     }
+    public boolean isValid(int x, int y, boolean black){
+        boolean move = false;
+        return move;
+
+    }
+
 }

@@ -12,8 +12,45 @@ public class Bishop extends Piece{
     }
     public boolean isValid(int x, int y, boolean black){
         boolean move = false;
+        Piece töten = SchachController.board[x][y];
+        if (SchachController.board[x][y] != null) {
+            for (int i = 0; i < SchachController.board.length; i++) {
+                if(töten.getBlack()&&!getBlack()||!töten.getBlack()&&getBlack()) {
+                    if (x == getX() + i && y == getY() + i) {
+                        move = (x == getX() + i && y == getY() + i);
+                    }
+                    if (x == getX() + i && y == getY() - i) {
+                        move = (x == getX() + i && y == getY() - i);
+                    }
+                    if (x == getX() - i && y == getY() + i) {
+                        move = (x == getX() - i && y == getY() + i);
+                    }
+                    if (x == getX() - i && y == getY() - i) {
+                        move = (x == getX() - i && y == getY() - i);
+                    }
+                }
+                else{
+                    return move;
+                }
+            }
+        }
+        else{
+            for (int i = 0; i < 7; i++) {
+                if (x == getX() + i && y == getY() + i) {
+                    move = (x == getX() + i && y == getY() + i);
+                }
+                if (x == getX() + i && y == getY() - i) {
+                    move = (x == getX() + i && y == getY() - i);
+                }
+                if (x == getX() - i && y == getY() + i) {
+                    move = (x == getX() - i && y == getY() + i);
+                }
+                if (x == getX() - i && y == getY() - i) {
+                    move = (x == getX() - i && y == getY() - i);
+                }
+            }
+        }
         return move;
-
     }
 
 }

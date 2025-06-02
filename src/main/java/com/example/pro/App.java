@@ -3,12 +3,15 @@ package com.example.pro;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Objects;
 
+
 public class App extends Application {
+    private static GameManager manager;
     public static Image BLACK_KING = load("black_king.png");
     public static Image BLACK_PAWN = load("black_pawn.png");
     public static Image WHITE_PAWN = load("white_pawn.png");
@@ -22,18 +25,22 @@ public class App extends Application {
     public static Image BLACK_ROOK = load("black_rook.png");
     public static Image WHITE_ROOK = load("white_rook.png");
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
-        GameManager manager = new GameManager(primaryStage);
-        manager.loadMenue();
-        primaryStage.setTitle("JSS-Spielesammlung");
+        manager = new GameManager(primaryStage);
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("Menu.fxml"));
+        Scene scene = new Scene(loader.load());
+        primaryStage.setTitle("Menü");
+        primaryStage.setScene(scene);
         primaryStage.setResizable(true);
-        primaryStage.show();
         manager.addGame(new Schach("Schach",null,"Schach.fxml"));
-        manager.launch(0);
-        primaryStage.setTitle("JSS Spielesammlung");
-        primaryStage.setResizable(true);
         primaryStage.show();
+    }
+
+    public static void showSchach(){
+        System.out.println("show Schach");
+        manager.launch(0);
     }
     private static Image load(String resourcePath) {
         return new Image(
@@ -41,6 +48,7 @@ public class App extends Application {
         );
     }
     public static void main(String[] args) {
+
         launch(args);
     }
 }

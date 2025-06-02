@@ -7,15 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pro.MenueController">
    <children>
       <Label layoutX="180.0" layoutY="14.0" prefHeight="77.0" prefWidth="262.0" text="JSS Spielesammlung" textAlignment="CENTER" textFill="#20c366" underline="true">
          <font>
             <Font name="Bodoni MT Bold" size="30.0" />
          </font>
       </Label>
-      <Button layoutX="62.0" layoutY="132.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="117.0" AnchorPane.rightAnchor="420.6666666666667">
+      <Button layoutX="62.0" layoutY="132.0" mnemonicParsing="false" onAction="#schachClick" prefHeight="122.0" prefWidth="117.0" AnchorPane.rightAnchor="420.6666666666667">
          <graphic>
             <ImageView fitHeight="122.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -7,6 +7,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
+import java.awt.desktop.QuitEvent;
+
 public class SchachController extends BasicController {
     private SchachModel model;
     @FXML
@@ -73,6 +75,11 @@ public class SchachController extends BasicController {
         else {
             selected = null;
         }
+
+    }
+
+    private void end(){
+
     }
     private void draw(){
         for (int i = 0; i<8;i++){

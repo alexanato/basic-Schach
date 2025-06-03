@@ -35,7 +35,7 @@ public class Bishop extends Piece{
             }
         }
         else{
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < SchachController.board.length; i++) {
                 if (x == getX() + i && y == getY() + i) {
                     move = (x == getX() + i && y == getY() + i);
                 }

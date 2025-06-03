@@ -31,17 +31,6 @@ public class GameManager {
     public Game getGame(int index){
         return games.get(index);
     }
-    public Image getGameLogo(int index){
-        return games.get(index).logo;
-    }
-
-    public void loadMenue() {
-        try {
-            switchTo("Menu.fxml");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public void launch(int gameIndex){
         Game game = getGame(gameIndex);

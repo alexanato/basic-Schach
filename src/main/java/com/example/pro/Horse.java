@@ -15,7 +15,7 @@ public class Horse extends Piece{
         if(x<=8&&y<=8){
             if(SchachController.board[x][y]!= null){
                 Piece Töten = SchachController.board[x][y];
-                if(!Töten.getBlack()&&black||Töten.getBlack()&&!black) {
+                if(!Töten.getBlack()&&getBlack()||Töten.getBlack()&&!getBlack()) {
                     move = (x == getX()+1&&y==getY()-2)||(x == getX()+2&&y==getY()-1)||
                             (x == getX()+2&&y==getY()+1)||(x == getX()+1&&y==getY()+2)||
                             (x == getX()-1&y==getY()-2)||(x == getX()-2&&y==getY()-1)||

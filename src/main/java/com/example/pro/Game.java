@@ -9,11 +9,9 @@ import java.io.IOException;
 
 public abstract class Game {
     public final String name;
-    public final Image logo;
     public final String viewPath;
-    public Game(String name,Image logo,String viewPath){
+    public Game(String name,String viewPath){
         this.name = name;
-        this.logo = logo;
         this.viewPath = viewPath;
     }
     public abstract void start(GameManager gameManager, BasicController controller);

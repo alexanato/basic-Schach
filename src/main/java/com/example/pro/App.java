@@ -31,10 +31,11 @@ public class App extends Application {
         manager = new GameManager(primaryStage);
         FXMLLoader loader = new FXMLLoader(App.class.getResource("Menu.fxml"));
         Scene scene = new Scene(loader.load());
-        primaryStage.setTitle("Menü");
+        primaryStage.setTitle("JSS Spielsammlung");
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(App.class.getResourceAsStream("13973.png"))));
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);
-        manager.addGame(new Schach("Schach",null,"Schach.fxml"));
+        manager.addGame(new Schach("Schach","Schach.fxml"));
         primaryStage.show();
     }
 

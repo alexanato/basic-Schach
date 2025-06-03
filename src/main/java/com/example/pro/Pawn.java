@@ -15,10 +15,10 @@ public class Pawn extends Piece {
         boolean move = false;
        if(SchachController.board[x][y]!= null){
             Piece Töten = SchachController.board[x][y];
-            if(!Töten.getBlack()&&black) {
+            if(!Töten.getBlack()&&getBlack()) {
                 move = (x == getX()+1 && y == getY() - 1||x == getX()-1 && y == getY() - 1);
             }
-            else if(Töten.getBlack()&&!black){
+            if(Töten.getBlack()&&!getBlack()){
                 move = (x == getX()+1 && y == getY() + 1||x == getX()-1 && y == getY() + 1);
             }
             else{

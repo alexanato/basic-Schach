@@ -1,21 +1,74 @@
 package com.example.pro;
 
-public class Queen extends Piece{
+public class Queen extends Piece {
     public Queen(int x, int y, boolean black) {
         super(x, y, black);
-        if(getBlack()){
+        if (getBlack()) {
             setSprite(App.BLACK_QUEEN);
-        }
-        else{
+        } else {
             setSprite(App.WHITE_QUEEN);
         }
     }
-    public boolean isValid(int x, int y, boolean black){
+
+    public boolean isValid(int x, int y, boolean black) {
         boolean move = false;
-        Bishop b = new Bishop(x,y,black);
-        Rook r = new Rook(x,y,black);
-        if(r.isValid(x,y,black) || b.isValid(x,y,black)){
-            move = true;
+        if (SchachController.board[x][y] != null) {
+            Piece Töten = SchachController.board[x][y];
+            if (Töten.getBlack() && !getBlack() || !Töten.getBlack() && getBlack()) {
+                for (int i = 0; i < SchachController.board.length; i++) {
+                    if (x == getX() + i && y == getY()) {
+                        move = (x == getX() + i && y == getY());
+                    }
+                    if (x == getX() - i && y == getY()) {
+                        move = (x == getX() - i && y == getY());
+                    }
+                    if (x == getX() && y == getY() + i) {
+                        move = (x == getX() && y == getY() + i);
+                    }
+                    if (x == getX() && y == getY() - i) {
+                        move = (x == getX() && y == getY() - i);
+                    }
+                    if (x == getX() + i && y == getY() + i) {
+                        move = (x == getX() + i && y == getY() + i);
+                    }
+                    if (x == getX() + i && y == getY() - i) {
+                        move = (x == getX() + i && y == getY() - i);
+                    }
+                    if (x == getX() - i && y == getY() + i) {
+                        move = (x == getX() - i && y == getY() + i);
+                    }
+                    if (x == getX() - i && y == getY() - i) {
+                        move = (x == getX() - i && y == getY() - i);
+                    }
+                }
+            }
+        } else {
+            for (int i = 0; i < SchachController.board.length; i++) {
+                if (x == getX() + i && y == getY()) {
+                    move = (x == getX() + i && y == getY());
+                }
+                if (x == getX() - i && y == getY()) {
+                    move = (x == getX() - i && y == getY());
+                }
+                if (x == getX() && y == getY() + i) {
+                    move = (x == getX() && y == getY() + i);
+                }
+                if (x == getX() && y == getY() - i) {
+                    move = (x == getX() && y == getY() - i);
+                }
+                if (x == getX() + i && y == getY() + i) {
+                    move = (x == getX() + i && y == getY() + i);
+                }
+                if (x == getX() + i && y == getY() - i) {
+                    move = (x == getX() + i && y == getY() - i);
+                }
+                if (x == getX() - i && y == getY() + i) {
+                    move = (x == getX() - i && y == getY() + i);
+                }
+                if (x == getX() - i && y == getY() - i) {
+                    move = (x == getX() - i && y == getY() - i);
+                }
+            }
         }
         return move;
     }

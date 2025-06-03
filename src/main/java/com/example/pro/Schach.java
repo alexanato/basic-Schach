@@ -4,8 +4,8 @@ import javafx.scene.image.Image;
 public class Schach extends Game{
 
     private SchachController controller;
-    public Schach(String name, Image logo, String viewPath) {
-        super(name, logo, viewPath);
+    public Schach(String name, String viewPath) {
+        super(name, viewPath);
     }
 
     @Override

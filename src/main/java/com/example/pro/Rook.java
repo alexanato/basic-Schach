@@ -16,7 +16,7 @@ public class Rook extends Piece {
         if (SchachController.board[x][y] != null) {
             Piece Töten = SchachController.board[x][y];
             for(int i = 0; i < SchachController.board.length; i++) {
-                if (Töten.getBlack() && !black || !Töten.getBlack() && black) {
+                if (Töten.getBlack() && !getBlack() || !Töten.getBlack() && getBlack()) {
                     if (x == getX() + i && y == getY()) {
                         move = (x == getX() + i && y == getY());
                     }
